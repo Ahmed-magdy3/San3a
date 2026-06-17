@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صنعة - دفع جدية الحجز</title>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/payment.css">
+<base target="_blank">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="san3a-header">
+    <div class="header-container">
+      <button class="btn-ghost" onclick="history.back()">
+        <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+        <span>العودة للحجز</span>
+      </button>
+      <div class="logo-box">
+        <div class="logo-icon">ص</div>
+        <div class="logo-text">SAN3A</div>
+      </div>
+      <div class="header-actions">
+        <button class="btn-icon" id="theme-toggle" title="تبديل الوضع المظلم">
+          <i data-lucide="moon" id="moon-icon" style="width:20px;height:20px"></i>
+          <i data-lucide="sun" id="sun-icon" style="width:20px;height:20px;display:none"></i>
+        </button>
+        <button class="btn-outline-blue" onclick="location.href='profile.html'">الملف الشخصي</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-container">
+      <h1 class="hero-title">دفع جدية الحجز</h1>
+      <div class="hero-badges">
+        <span class="hero-badge" id="hero-country">مصر · جنيه</span>
+        <span class="hero-service" id="hero-service">خدمة: النجارة</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="content-grid">
+
+      <!-- How Deposit Works Card -->
+      <div class="info-card" id="deposit-info-card">
+        <div class="info-header">
+          <i data-lucide="info" class="icon-blue" style="width:22px;height:22px"></i>
+          <h3 class="info-title">كيف تعمل جدية الحجز؟</h3>
+        </div>
+        <div class="info-body">
+          <!-- Deposit Breakdown -->
+          <div class="deposit-breakdown">
+            <div class="deposit-header">
+              <span class="deposit-label">إجمالي جدية الحجز</span>
+              <span class="deposit-total" id="deposit-total">140 جنيه</span>
+            </div>
+            <!-- Progress Bar -->
+            <div class="deposit-bar">
+              <div class="bar-worker" id="bar-worker"></div>
+              <div class="bar-platform" id="bar-platform"></div>
+            </div>
+            <!-- Split -->
+            <div class="deposit-split">
+              <div class="split-box worker-box">
+                <div class="split-label">
+                  <div class="dot green"></div>
+                  <span>ضمان العامل (<span id="worker-pct">57%</span>)</span>
+                </div>
+                <div class="split-amount" id="worker-amount">80 جنيه</div>
+                <div class="split-desc">للعامل حتى لو لم تكن موجوداً</div>
+              </div>
+              <div class="split-box platform-box">
+                <div class="split-label">
+                  <div class="dot purple"></div>
+                  <span>رسوم المنصة (<span id="platform-pct">43%</span>)</span>
+                </div>
+                <div class="split-amount" id="platform-amount">60 جنيه</div>
+                <div class="split-desc">تُخصم عند تأكيد الحجز</div>
+              </div>
+            </div>
+          </div>
+          <!-- Notes -->
+          <div class="info-notes">
+            <p>✅ ادفع <strong id="note-total">140 جنيه</strong> الآن لتأكيد حجزك وضمان الموعد</p>
+            <p>🔧 العامل يقدّم الخدمة — يُحسب السعر على أساس <strong>(السعر/ساعة × عدد الساعات) - جدية الحجز</strong></p>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Left: Payment Methods -->
+      <div class="form-column">
+        <div class="card payment-card">
+          <div class="card-header">
+            <div class="card-header-left">
+              <i data-lucide="credit-card" class="icon-blue"></i>
+              <h3 class="card-title">طريقة الدفع</h3>
+            </div>
+            <span class="badge-secure">دفع إلكتروني آمن</span>
+          </div>
+          <div class="card-body">
+            <!-- Payment Methods -->
+            <div class="payment-methods" id="payment-methods">
+              <!-- Visa -->
+              <label class="method-row active" data-method="visa">
+                <input type="radio" name="payment-method" value="visa" checked>
+                <div class="method-icon">
+                  <i data-lucide="credit-card" style="width:22px;height:22px"></i>
+                </div>
+                <div class="method-info">
+                  <div class="method-name">بطاقة ائتمانية (Visa/MasterCard)</div>
+                  <div class="method-desc">دفع آمن ومشفر</div>
+                </div>
+              </label>
+              <!-- PayPal -->
+              <label class="method-row" data-method="paypal">
+                <input type="radio" name="payment-method" value="paypal">
+                <div class="method-icon">
+                  <i data-lucide="smartphone" style="width:22px;height:22px"></i>
+                </div>
+                <div class="method-info">
+                  <div class="method-name">PayPal</div>
+                  <div class="method-desc">ادفع بحساب PayPal</div>
+                </div>
+              </label>
+              <!-- Wallet -->
+              <label class="method-row" data-method="wallet">
+                <input type="radio" name="payment-method" value="wallet">
+                <div class="method-icon">
+                  <i data-lucide="wallet" style="width:22px;height:22px"></i>
+                </div>
+                <div class="method-info">
+                  <div class="method-name">Apple Pay / Google Pay</div>
+                  <div class="method-desc">ادفع بمحفظتك الرقمية</div>
+                </div>
+              </label>
+            </div>
+
+            <!-- Card Form -->
+            <div class="card-form" id="card-form">
+              <h4 class="form-section-title">تفاصيل البطاقة</h4>
+              <div class="form-grid">
+                <div class="form-group full">
+                  <label class="form-label">رقم البطاقة</label>
+                  <input type="text" class="form-input" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">تاريخ الانتهاء</label>
+                  <input type="text" class="form-input" id="card-expiry" placeholder="MM/YY" maxlength="5">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">CVV</label>
+                  <input type="text" class="form-input" id="card-cvv" placeholder="123" maxlength="4">
+                </div>
+                <div class="form-group full">
+                  <label class="form-label">اسم حامل البطاقة</label>
+                  <input type="text" class="form-input" id="card-name" placeholder="الاسم كما يظهر على البطاقة">
+                </div>
+              </div>
+            </div>
+
+            <!-- PayPal Message -->
+            <div class="method-message hidden" id="paypal-msg">
+              سيتم توجيهك إلى PayPal لإتمام الدفع بأمان.
+            </div>
+
+            <!-- Wallet Message -->
+            <div class="method-message hidden" id="wallet-msg">
+              سيتم توجيهك لاستخدام Apple Pay أو Google Pay.
+            </div>
+
+            <!-- Submit -->
+            <button class="btn-pay" id="btn-pay" onclick="handlePayment()">
+              <span id="btn-pay-text">دفع جدية الحجز 140 جنيه</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Sidebar -->
+      <div class="sidebar-column">
+        <!-- Booking Summary -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">ملخص الحجز</h3>
+          </div>
+          <div class="card-body summary-body">
+            <div class="summary-row">
+              <span class="summary-label">الخدمة:</span>
+              <span class="summary-value" id="summary-service">النجارة</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">العامل:</span>
+              <span class="summary-value" id="summary-worker">أحمد محمد السيد</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">الموعد:</span>
+              <span class="summary-value" id="summary-appointment">غداً — 10:00 صباحاً</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">البلد:</span>
+              <span class="summary-value" id="summary-country">مصر</span>
+            </div>
+            <hr class="divider">
+            <!-- Deposit Box -->
+            <div class="deposit-mini">
+              <div class="deposit-mini-header">
+                <span class="deposit-mini-label">جدية الحجز:</span>
+                <span class="deposit-mini-total" id="sidebar-total">140 جنيه</span>
+              </div>
+              <div class="deposit-mini-split">
+                <span class="mini-worker" id="sidebar-worker">↳ عامل: 80 جنيه</span>
+                <span class="mini-platform" id="sidebar-platform">موقع: 60 جنيه</span>
+              </div>
+            </div>
+            <div class="deposit-note">
+              <p>المبلغ المتبقي = (ساعات العمل × سعر/ساعة) − <span id="sidebar-note-worker">80 جنيه</span></p>
+              <p>يُدفع للعامل مباشرة بعد إتمام الخدمة</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security Card -->
+        <div class="card card-green">
+          <div class="card-body">
+            <div class="security-header">
+              <i data-lucide="shield-check" style="width:20px;height:20px;color:var(--green-600)"></i>
+              <h3 class="security-title">دفع آمن</h3>
+            </div>
+            <ul class="security-list">
+              <li>• معلوماتك محمية بتشفير SSL</li>
+              <li>• لا نحتفظ ببيانات البطاقة</li>
+              <li>• ضمان استرداد المال</li>
+              <li>• دعم فني 24/7</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/global.js"></script>
+  <script src="js/payment.js"></script>
+</body>
+</html>

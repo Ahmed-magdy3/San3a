@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>خدماتنا المتخصصة — SAN3A</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/services.css" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { cairo: ['Cairo', 'sans-serif'] },
+          colors: {
+            'san3a-primary': '#1e40af',
+            'san3a-secondary': '#3b82f6',
+          }
+        },
+      },
+    };
+  </script>
+<base target="_blank">
+</head>
+
+<body class="font-cairo bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 min-h-screen">
+
+  <!-- ===== HEADER ===== -->
+  <header class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 sticky top-0 z-50 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- Right: Back -->
+      <a href="index.html" class="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold text-sm transition-colors">
+        العودة للرئيسية
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <!-- Center: Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-md">
+          <span class="text-white font-bold text-lg">ص</span>
+        </div>
+        <span class="text-2xl font-bold text-gray-900 dark:text-white">SAN3A</span>
+      </a>
+
+      <!-- Left: Buttons -->
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all">
+          <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-600"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-yellow-400 hidden"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="profile.html" class="border border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 font-semibold px-4 py-2 rounded-lg text-sm transition-all">
+          الملف الشخصي
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="bg-blue-600 dark:bg-blue-700 py-12 text-white text-center transition-colors duration-300">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-4xl font-bold mb-4">خدماتنا المتخصصة</h1>
+      <p class="text-blue-100 text-xl mb-4">اختر الخدمة التي تحتاجها من مجموعة واسعة من المهنيين المعتمدين</p>
+      <div class="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 text-sm">
+        🇪🇬 الأسعار بالـ جنيه
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES GRID ===== -->
+  <main class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- 1. الكهرباء -->
+      <div class="service-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer" data-service="electricity">
+        <div class="icon-box w-20 h-20 bg-yellow-50 dark:bg-yellow-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">الكهرباء</h3>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">خدمات كهربائية وإصلاح الأعطال</p>
+        <div class="price-pill inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold px-4 py-2 rounded-full mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          جدية الحجز: 120 جنيه
+        </div>
+        <p class="text-gray-400 dark:text-gray-500 text-sm mb-5">73 عامل متاح</p>
+        <a href="booking.html?service=electricity" class="book-btn block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition-all duration-200">
+          احجز الآن
+        </a>
+      </div>
+
+      <!-- 2. السباكة -->
+      <div class="service-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer" data-service="plumbing">
+        <div class="icon-box w-20 h-20 bg-green-50 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">السباكة</h3>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">إصلاح وصيانة الأنابيب والصرف الصحي</p>
+        <div class="price-pill inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold px-4 py-2 rounded-full mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          جدية الحجز: 100 جنيه
+        </div>
+        <p class="text-gray-400 dark:text-gray-500 text-sm mb-5">89 عامل متاح</p>
+        <a href="booking.html?service=plumbing" class="book-btn block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition-all duration-200">
+          احجز الآن
+        </a>
+      </div>
+
+      <!-- 3. تنظيف المنازل -->
+      <div class="service-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer" data-service="cleaning">
+        <div class="icon-box w-20 h-20 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">تنظيف المنازل</h3>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">خدمات تنظيف شاملة للمنازل والمكاتب</p>
+        <div class="price-pill inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold px-4 py-2 rounded-full mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          جدية الحجز: 80 جنيه
+        </div>
+        <p class="text-gray-400 dark:text-gray-500 text-sm mb-5">156 عامل متاح</p>
+        <a href="booking.html?service=cleaning" class="book-btn block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition-all duration-200">
+          احجز الآن
+        </a>
+      </div>
+
+      <!-- 4. الدهان والديكور -->
+      <div class="service-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer" data-service="painting">
+        <div class="icon-box w-20 h-20 bg-pink-50 dark:bg-pink-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="#db2777"/><circle cx="17.5" cy="10.5" r=".5" fill="#db2777"/><circle cx="8.5" cy="7.5" r=".5" fill="#db2777"/><circle cx="6.5" cy="12.5" r=".5" fill="#db2777"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">الدهان والديكور</h3>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">دهان الحائط والديكورات الداخلية</p>
+        <div class="price-pill inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold px-4 py-2 rounded-full mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          جدية الحجز: 120 جنيه
+        </div>
+        <p class="text-gray-400 dark:text-gray-500 text-sm mb-5">52 عامل متاح</p>
+        <a href="booking.html?service=painting" class="book-btn block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition-all duration-200">
+          احجز الآن
+        </a>
+      </div>
+
+      <!-- 5. إصلاح الأجهزة المنزلية -->
+      <div class="service-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer" data-service="appliances">
+        <div class="icon-box w-20 h-20 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">إصلاح الأجهزة المنزلية</h3>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">صيانة جميع الأجهزة الكهربائية</p>
+        <div class="price-pill inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold px-4 py-2 rounded-full mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          جدية الحجز: 150 جنيه
+        </div>
+        <p class="text-gray-400 dark:text-gray-500 text-sm mb-5">67 عامل متاح</p>
+        <a href="booking.html?service=appliances" class="book-btn block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition-all duration-200">
+          احجز الآن
+        </a>
+      </div>
+
+      <!-- 6. النجارة -->
+      <div class="service-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer" data-service="carpentry">
+        <div class="icon-box w-20 h-20 bg-orange-50 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 5.6a5.009 5.009 0 0 0-6.22.26L17.99 14c.5-.36.78-.91.92-1.7A2.9 2.9 0 0 0 20.91 11.7z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">النجارة</h3>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">صنع وإصلاح الأثاث الخشبي</p>
+        <div class="price-pill inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold px-4 py-2 rounded-full mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          جدية الحجز: 140 جنيه
+        </div>
+        <p class="text-gray-400 dark:text-gray-500 text-sm mb-5">45 عامل متاح</p>
+        <a href="booking.html?service=carpentry" class="book-btn block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition-all duration-200">
+          احجز الآن
+        </a>
+      </div>
+
+      <!-- 7. نقل الأثاث -->
+      <div class="service-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer" data-service="moving">
+        <div class="icon-box w-20 h-20 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">نقل الأثاث</h3>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">نقل الأثاث والممتلكات بأمان</p>
+        <div class="price-pill inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold px-4 py-2 rounded-full mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          جدية الحجز: 200 جنيه
+        </div>
+        <p class="text-gray-400 dark:text-gray-500 text-sm mb-5">38 عامل متاح</p>
+        <a href="booking.html?service=moving" class="book-btn block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition-all duration-200">
+          احجز الآن
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== WHY SAN3A ===== -->
+  <section class="bg-white dark:bg-gray-800 py-16 transition-colors duration-300">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">لماذا تختار SAN3A؟</h2>
+      <p class="text-gray-500 dark:text-gray-400 text-lg mb-12">نقدم لك أفضل تجربة في الخدمات المنزلية</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="why-item p-6 rounded-2xl">
+          <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/40 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">عمال معتمدون</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">جميع عمالنا مدربون ومعتمدون مع خبرة واسعة</p>
+        </div>
+
+        <div class="why-item p-6 rounded-2xl">
+          <div class="w-16 h-16 bg-green-100 dark:bg-green-900/40 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">خدمة سريعة</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">نصل إليك في أسرع وقت ممكن</p>
+        </div>
+
+        <div class="why-item p-6 rounded-2xl">
+          <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/40 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.58a2.41 2.41 0 0 0 3.41 0l7.58-7.58a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0z"/></svg>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">جودة مضمونة</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">نضمن جودة العمل مع إمكانية الاسترداد</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EMERGENCY ===== -->
+  <section class="bg-red-50 dark:bg-red-950/30 py-16 text-center transition-colors duration-300">
+    <div class="max-w-xl mx-auto px-6 space-y-4">
+      <h2 class="text-3xl font-bold text-red-700 dark:text-red-400">خدمات الطوارئ</h2>
+      <p class="text-red-500 dark:text-red-300 text-base">متاحون على مدار الساعة لحالات الطوارئ</p>
+      <div class="pt-2">
+        <button id="emergency-btn" class="bg-red-600 hover:bg-red-700 active:scale-95 text-white font-bold px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 text-base">
+          اتصل الآن: 123-456-7890
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/global.js"></script>
+  <script src="js/services.js"></script>
+</body>
+</html>

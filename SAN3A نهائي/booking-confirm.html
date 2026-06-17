@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صنعة - احجز موعدك</title>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    html.dark body { background: #0f172a; color: #e2e8f0; }
+
+    /* ===== UTILITIES ===== */
+    .hidden { display: none !important; }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    html.dark .header { background: #1e2937; border-color: #374151; }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-ghost {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      color: #64748b;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-ghost:hover { background: #f1f5f9; color: #334155; }
+    html.dark .btn-ghost { color: #94a3b8; }
+    html.dark .btn-ghost:hover { background: #334155; color: #fff; }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: #2563eb;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .logo-text {
+      font-size: 22px;
+      font-weight: 800;
+      color: #1e40af;
+    }
+    html.dark .logo-text { color: #fff; }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-icon {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #64748b;
+      transition: 0.2s;
+    }
+    .btn-icon:hover { background: #f1f5f9; }
+    html.dark .btn-icon { border-color: #4b5563; color: #facc15; }
+    html.dark .btn-icon:hover { background: #374151; }
+    .btn-outline {
+      padding: 8px 16px;
+      border: 1px solid #2563eb;
+      background: transparent;
+      color: #2563eb;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-outline:hover { background: #eff6ff; }
+    html.dark .btn-outline { border-color: #3b82f6; color: #60a5fa; }
+    html.dark .btn-outline:hover { background: #1f2937; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: #2563eb;
+      padding: 32px 0;
+      color: #fff;
+    }
+    html.dark .hero { background: #1d4ed8; }
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .hero-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .hero-subtitle {
+      color: rgba(255,255,255,0.85);
+      font-size: 16px;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content {
+      background: #f8fafc;
+      min-height: 50vh;
+      padding: 32px 0;
+    }
+    html.dark .main-content { background: #0f172a; }
+    .content-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    html.dark .card {
+      background: #1e2937;
+      border-color: #374151;
+    }
+    .card-blue {
+      background: #eff6ff;
+      border-color: #dbeafe;
+    }
+    html.dark .card-blue {
+      background: rgba(37, 99, 235, 0.1);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+    .card-green {
+      background: #f0fdf4;
+      border-color: #dcfce7;
+    }
+    html.dark .card-green {
+      background: rgba(22, 163, 74, 0.1);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+    .card-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    html.dark .card-header { border-color: #374151; }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    html.dark .card-title { color: #f1f5f9; }
+    .card-subtitle {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+    html.dark .card-subtitle { color: #94a3b8; }
+    .card-body {
+      padding: 24px;
+    }
+    .icon-blue {
+      width: 20px;
+      height: 20px;
+      color: #2563eb;
+    }
+
+    /* ===== FORM ===== */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    html.dark .form-label { color: #f1f5f9; }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: 15px;
+      color: #0f172a;
+      font-family: inherit;
+    }
+    html.dark .form-input,
+    html.dark .form-select,
+    html.dark .form-textarea {
+      background: #374151;
+      border-color: #4b5563;
+      color: #f1f5f9;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #94a3b8;
+    }
+    .form-select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 12px center;
+      padding-left: 36px;
+    }
+    .form-select:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .form-hint {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 6px;
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-submit:hover { background: #1d4ed8; }
+
+    /* ===== DAYS TABS ===== */
+    .days-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .day-tab {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: 0.2s;
+      border: none;
+      background: #f1f5f9;
+      color: #334155;
+    }
+    .day-tab:hover { background: #e2e8f0; }
+    .day-tab.active {
+      background: #2563eb;
+      color: #fff;
+    }
+    html.dark .day-tab {
+      background: #374151;
+      color: #94a3b8;
+    }
+    html.dark .day-tab:hover { background: #4b5563; }
+    html.dark .day-tab.active {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    /* ===== LEGEND ===== */
+    .legend {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #64748b;
+    }
+    .legend-box {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 2px solid;
+    }
+    .legend-box.available {
+      background: #f0fdf4;
+      border-color: #16a34a;
+    }
+    html.dark .legend-box.available {
+      background: rgba(22, 163, 74, 0.2);
+      border-color: #16a34a;
+    }
+    .legend-box.busy {
+      background: #fef2f2;
+      border-color: #ef4444;
+    }
+    html.dark .legend-box.busy {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: #ef4444;
+    }
+
+    /* ===== SLOTS GRID ===== */
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .slot-card {
+      padding: 12px;
+      border-radius: 10px;
+      border: 2px solid;
+      transition: 0.2s;
+    }
+    .slot-card.available {
+      background: #f0fdf4;
+      border-color: #16a34a;
+    }
+    html.dark .slot-card.available {
+      background: rgba(22, 163, 74, 0.15);
+      border-color: #16a34a;
+    }
+    .slot-card.busy {
+      background: #fef2f2;
+      border-color: #ef4444;
+    }
+    html.dark .slot-card.busy {
+      background: rgba(239, 68, 68, 0.15);
+      border-color: #ef4444;
+    }
+    .slot-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .slot-time {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    html.dark .slot-time { color: #f1f5f9; }
+    .slot-time svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    .slot-status {
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .slot-status.available { color: #15803d; }
+    .slot-status.busy { color: #dc2626; }
+    html.dark .slot-status.available { color: #4ade80; }
+    html.dark .slot-status.busy { color: #f87171; }
+
+    /* ===== SIDEBAR ===== */
+    .summary-body { padding: 16px 20px; }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+    .summary-label {
+      font-size: 14px;
+      color: #64748b;
+    }
+    html.dark .summary-label { color: #94a3b8; }
+    .summary-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    html.dark .summary-value { color: #f1f5f9; }
+    .summary-badge {
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .summary-badge.blue {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+    .summary-badge.green {
+      background: #dcfce7;
+      color: #15803d;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 12px 0;
+    }
+    html.dark .divider { border-color: #374151; }
+
+    /* ===== NOTES CARD ===== */
+    .notes-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 12px;
+    }
+    html.dark .notes-title { color: #93c5fd; }
+    .notes-list {
+      list-style: none;
+      padding: 0;
+    }
+    .notes-list li {
+      font-size: 13px;
+      color: #1d4ed8;
+      padding: 6px 0;
+      line-height: 1.6;
+    }
+    html.dark .notes-list li { color: #bfdbfe; }
+
+    /* ===== GUARANTEE CARD ===== */
+    .shield-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    .guarantee-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #15803d;
+      margin-bottom: 8px;
+    }
+    html.dark .guarantee-title { color: #4ade80; }
+    .guarantee-text {
+      font-size: 13px;
+      color: #15803d;
+      line-height: 1.6;
+    }
+    html.dark .guarantee-text { color: #86efac; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .sidebar-column {
+        order: -1;
+      }
+    }
+    @media (max-width: 768px) {
+      .header-inner,
+      .hero-inner,
+      .content-grid {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .hero-title { font-size: 22px; }
+      .slots-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      .logo-text { display: none; }
+      .btn-ghost span { display: none; }
+      .slots-grid {
+        grid-template-columns: 1fr;
+      }
+      .days-tabs {
+        gap: 6px;
+      }
+      .day-tab {
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+<base target="_blank">
+<base target="_blank">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <button class="btn-ghost" onclick="history.back()">
+        <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+        <span>العودة للعمال</span>
+      </button>
+      <div class="logo-wrap">
+        <div class="logo-icon">ص</div>
+        <div class="logo-text">SAN3A</div>
+      </div>
+      <div class="header-actions">
+        <button class="btn-icon" id="theme-btn" title="تبديل الوضع المظلم">
+          <i data-lucide="moon" id="moon-icon" style="width:20px;height:20px"></i>
+          <i data-lucide="sun" id="sun-icon" style="width:20px;height:20px;display:none"></i>
+        </button>
+        <button class="btn-outline" onclick="location.href='profile.html'">الملف الشخصي</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">احجز موعدك</h1>
+      <p class="hero-subtitle">املأ النموذج أدناه لتأكيد الحجز</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="content-grid">
+      <!-- Left: Form -->
+      <div class="form-column">
+        <!-- Booking Details -->
+        <div class="card">
+          <div class="card-header">
+            <i data-lucide="calendar" class="icon-blue"></i>
+            <h3 class="card-title">تفاصيل الحجز</h3>
+          </div>
+          <div class="card-body">
+            <form id="booking-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">التاريخ</label>
+                  <input type="date" id="date-input" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">الوقت المتاح</label>
+                  <select id="time-select" class="form-select" disabled>
+                    <option value="">اختر التاريخ أولاً</option>
+                  </select>
+                  <p class="form-hint" id="time-hint"></p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  <i data-lucide="map-pin" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-left:4px"></i>
+                  العنوان التفصيلي
+                </label>
+                <input type="text" id="address-input" class="form-input" 
+                  placeholder="اكتب العنوان الكامل (الشارع، المبنى، رقم الشقة...)" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">وصف الخدمة</label>
+                <textarea id="description-input" class="form-textarea" rows="4" 
+                  placeholder="اكتب تفاصيل الخدمة المطلوبة..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  <i data-lucide="clock" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-left:4px"></i>
+                  أولوية الخدمة
+                </label>
+                <select id="urgency-select" class="form-select">
+                  <option value="normal">عادية</option>
+                  <option value="urgent">عاجلة</option>
+                  <option value="emergency">طارئة</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-submit">تأكيد الحجز</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Worker's Schedule -->
+        <div class="card">
+          <div class="card-header">
+            <i data-lucide="clock" class="icon-blue"></i>
+            <div>
+              <h3 class="card-title">الأوقات المتاحة للعامل</h3>
+              <p class="card-subtitle">اختر اليوم لعرض الأوقات المتاحة (ساعات العمل: 8 صباحاً - 8 مساءً)</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="days-tabs" id="days-tabs"></div>
+            <div class="legend">
+              <div class="legend-item">
+                <div class="legend-box available"></div>
+                <span>متاح</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-box busy"></div>
+                <span>مشغول</span>
+              </div>
+            </div>
+            <div class="slots-grid" id="slots-grid"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Sidebar -->
+      <div class="sidebar-column">
+        <!-- Booking Summary -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">ملخص الحجز</h3>
+          </div>
+          <div class="card-body summary-body">
+            <div class="summary-row">
+              <span class="summary-label">العامل:</span>
+              <span class="summary-value" id="summary-name">أحمد محمد السيد</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">المهنة:</span>
+              <span class="summary-value" id="summary-role">عامل تنظيف</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">التقييم:</span>
+              <span class="summary-value" id="summary-rating">⭐ 4.9 (127 تقييم)</span>
+            </div>
+            <div class="summary-row hidden" id="summary-date-row">
+              <span class="summary-label">اليوم:</span>
+              <span class="summary-badge blue" id="summary-day"></span>
+            </div>
+            <div class="summary-row hidden" id="summary-time-row">
+              <span class="summary-label">الوقت:</span>
+              <span class="summary-badge green" id="summary-time"></span>
+            </div>
+            <hr class="divider">
+            <div class="summary-row">
+              <span class="summary-label">جدية الحجز:</span>
+              <span class="summary-value font-bold text-blue-600 dark:text-blue-400" id="summary-deposit-val">--</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="card card-blue">
+          <div class="card-body">
+            <h3 class="notes-title">ملاحظات مهمة</h3>
+            <ul class="notes-list">
+              <li>• سيتم تأكيد الحجز خلال 15 دقيقة</li>
+              <li>• يمكنك إلغاء الحجز قبل 2 ساعة مجاناً</li>
+              <li>• العامل سيتواصل معك قبل الموعد</li>
+              <li>• الدفع يتم بعد انتهاء الخدمة</li>
+              <li>• ساعات العمل: 8 صباحاً - 8 مساءً</li>
+              <li>• الجمعة: 12 ظهراً - 8 مساءً</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quality Guarantee -->
+        <div class="card card-green">
+          <div class="card-body" style="text-align:center">
+            <div class="shield-icon">🛡️</div>
+            <h3 class="guarantee-title">ضمان الجودة</h3>
+            <p class="guarantee-text">نضمن جودة الخدمة مع إمكانية استرداد المال في حالة عدم الرضا</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    /* ===== DARK MODE ===== */
+    (function() {
+      const saved = localStorage.getItem('san3a-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+      document.getElementById('theme-btn').addEventListener('click', function() {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('san3a-theme', isDark ? 'dark' : 'light');
+        document.getElementById('moon-icon').style.display = isDark ? 'none' : 'block';
+        document.getElementById('sun-icon').style.display = isDark ? 'block' : 'none';
+      });
+      if (document.documentElement.classList.contains('dark')) {
+        document.getElementById('moon-icon').style.display = 'none';
+        document.getElementById('sun-icon').style.display = 'block';
+      }
+    })();
+
+    /* ===== DATA ===== */
+    let selectedWorkerObj = null;
+    try {
+      selectedWorkerObj = JSON.parse(localStorage.getItem('san3a-selectedWorkerObj'));
+    } catch(e) {}
+
+    const WORKER = selectedWorkerObj ? {
+      id: selectedWorkerObj.id,
+      name: selectedWorkerObj.name,
+      profession: selectedWorkerObj.role || selectedWorkerObj.profession || 'عامل صنعة',
+      rating: selectedWorkerObj.rate || 4.9,
+      reviews: selectedWorkerObj.rev || 127
+    } : {
+      id: 'c1',
+      name: 'أحمد محمد السيد',
+      profession: 'عامل تنظيف',
+      rating: 4.9,
+      reviews: 127
+    };
+
+    const SCHEDULE = {
+      "السبت": [
+        { time: "08:00 - 09:00", status: "متاح", id: 1 },
+        { time: "09:00 - 10:00", status: "متاح", id: 2 },
+        { time: "10:00 - 11:00", status: "مشغول", client: "سارة أحمد", id: 3 },
+        { time: "11:00 - 12:00", status: "متاح", id: 4 },
+        { time: "12:00 - 13:00", status: "متاح", id: 5 },
+        { time: "13:00 - 14:00", status: "متاح", id: 6 },
+        { time: "14:00 - 15:00", status: "مشغول", client: "محمد علي", id: 7 },
+        { time: "15:00 - 16:00", status: "متاح", id: 8 },
+        { time: "16:00 - 17:00", status: "متاح", id: 9 },
+        { time: "17:00 - 18:00", status: "متاح", id: 10 },
+        { time: "18:00 - 19:00", status: "متاح", id: 11 },
+        { time: "19:00 - 20:00", status: "مشغول", client: "خالد أحمد", id: 12 },
+      ],
+      "الأحد": [
+        { time: "08:00 - 09:00", status: "متاح", id: 13 },
+        { time: "09:00 - 10:00", status: "مشغول", client: "فاطمة حسن", id: 14 },
+        { time: "10:00 - 11:00", status: "متاح", id: 15 },
+        { time: "11:00 - 12:00", status: "متاح", id: 16 },
+        { time: "12:00 - 13:00", status: "متاح", id: 17 },
+        { time: "13:00 - 14:00", status: "متاح", id: 18 },
+        { time: "14:00 - 15:00", status: "متاح", id: 19 },
+        { time: "15:00 - 16:00", status: "مشغول", client: "عمر سعيد", id: 20 },
+        { time: "16:00 - 17:00", status: "متاح", id: 21 },
+        { time: "17:00 - 18:00", status: "متاح", id: 22 },
+        { time: "18:00 - 19:00", status: "متاح", id: 23 },
+        { time: "19:00 - 20:00", status: "مشغول", client: "خالد إبراهيم", id: 24 },
+      ],
+      "الاثنين": [
+        { time: "08:00 - 09:00", status: "مشغول", client: "نورة السالم", id: 25 },
+        { time: "09:00 - 10:00", status: "متاح", id: 26 },
+        { time: "10:00 - 11:00", status: "متاح", id: 27 },
+        { time: "11:00 - 12:00", status: "متاح", id: 28 },
+        { time: "12:00 - 13:00", status: "مشغول", client: "أحمد ناصر", id: 29 },
+        { time: "13:00 - 14:00", status: "متاح", id: 30 },
+        { time: "14:00 - 15:00", status: "متاح", id: 31 },
+        { time: "15:00 - 16:00", status: "مشغول", client: "عبدالله محمود", id: 32 },
+        { time: "16:00 - 17:00", status: "متاح", id: 33 },
+        { time: "17:00 - 18:00", status: "متاح", id: 34 },
+        { time: "18:00 - 19:00", status: "متاح", id: 35 },
+        { time: "19:00 - 20:00", status: "متاح", id: 36 },
+      ],
+      "الثلاثاء": [
+        { time: "08:00 - 09:00", status: "متاح", id: 37 },
+        { time: "09:00 - 10:00", status: "متاح", id: 38 },
+        { time: "10:00 - 11:00", status: "مشغول", client: "مريم خالد", id: 39 },
+        { time: "11:00 - 12:00", status: "متاح", id: 40 },
+        { time: "12:00 - 13:00", status: "متاح", id: 41 },
+        { time: "13:00 - 14:00", status: "متاح", id: 42 },
+        { time: "14:00 - 15:00", status: "متاح", id: 43 },
+        { time: "15:00 - 16:00", status: "متاح", id: 44 },
+        { time: "16:00 - 17:00", status: "مشغول", client: "ياسر حسام", id: 45 },
+        { time: "17:00 - 18:00", status: "متاح", id: 46 },
+        { time: "18:00 - 19:00", status: "متاح", id: 47 },
+        { time: "19:00 - 20:00", status: "متاح", id: 48 },
+      ],
+      "الأربعاء": [
+        { time: "08:00 - 09:00", status: "متاح", id: 49 },
+        { time: "09:00 - 10:00", status: "متاح", id: 50 },
+        { time: "10:00 - 11:00", status: "مشغول", client: "ليلى أحمد", id: 51 },
+        { time: "11:00 - 12:00", status: "متاح", id: 52 },
+        { time: "12:00 - 13:00", status: "مشغول", client: "طارق فيصل", id: 53 },
+        { time: "13:00 - 14:00", status: "متاح", id: 54 },
+        { time: "14:00 - 15:00", status: "متاح", id: 55 },
+        { time: "15:00 - 16:00", status: "متاح", id: 56 },
+        { time: "16:00 - 17:00", status: "متاح", id: 57 },
+        { time: "17:00 - 18:00", status: "متاح", id: 58 },
+        { time: "18:00 - 19:00", status: "مشغول", client: "سلمى حسين", id: 59 },
+        { time: "19:00 - 20:00", status: "متاح", id: 60 },
+      ],
+      "الخميس": [
+        { time: "08:00 - 09:00", status: "مشغول", client: "رانيا سعيد", id: 61 },
+        { time: "09:00 - 10:00", status: "متاح", id: 62 },
+        { time: "10:00 - 11:00", status: "متاح", id: 63 },
+        { time: "11:00 - 12:00", status: "متاح", id: 64 },
+        { time: "12:00 - 13:00", status: "متاح", id: 65 },
+        { time: "13:00 - 14:00", status: "مشغول", client: "يوسف علي", id: 66 },
+        { time: "14:00 - 15:00", status: "متاح", id: 67 },
+        { time: "15:00 - 16:00", status: "متاح", id: 68 },
+        { time: "16:00 - 17:00", status: "متاح", id: 69 },
+        { time: "17:00 - 18:00", status: "متاح", id: 70 },
+        { time: "18:00 - 19:00", status: "متاح", id: 71 },
+        { time: "19:00 - 20:00", status: "مشغول", client: "حسن كريم", id: 72 },
+      ],
+      "الجمعة": [
+        { time: "12:00 - 13:00", status: "متاح", id: 73 },
+        { time: "13:00 - 14:00", status: "متاح", id: 74 },
+        { time: "14:00 - 15:00", status: "متاح", id: 75 },
+        { time: "15:00 - 16:00", status: "مشغول", client: "منى عادل", id: 76 },
+        { time: "16:00 - 17:00", status: "متاح", id: 77 },
+        { time: "17:00 - 18:00", status: "متاح", id: 78 },
+        { time: "18:00 - 19:00", status: "متاح", id: 79 },
+        { time: "19:00 - 20:00", status: "مشغول", client: "بدر فهد", id: 80 },
+      ],
+    };
+
+    const DAY_NAMES = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+
+    /* ===== STATE ===== */
+    let selectedDay = "السبت";
+    let selectedDate = "";
+    let selectedTime = "";
+
+    /* ===== DOM ===== */
+    const els = {
+      dateInput: document.getElementById('date-input'),
+      timeSelect: document.getElementById('time-select'),
+      timeHint: document.getElementById('time-hint'),
+      daysTabs: document.getElementById('days-tabs'),
+      slotsGrid: document.getElementById('slots-grid'),
+      summaryDayRow: document.getElementById('summary-date-row'),
+      summaryTimeRow: document.getElementById('summary-time-row'),
+      summaryDay: document.getElementById('summary-day'),
+      summaryTime: document.getElementById('summary-time'),
+      form: document.getElementById('booking-form')
+    };
+
+    /* ===== HELPERS ===== */
+    function getDayNameFromDate(dateStr) {
+      if (!dateStr) return null;
+      const d = new Date(dateStr);
+      return DAY_NAMES[d.getDay()];
+    }
+
+    function getAvailableTimes(dayName) {
+      const schedule = SCHEDULE[dayName];
+      if (!schedule) return [];
+      return schedule.filter(s => s.status === "متاح").map(s => s.time);
+    }
+
+    function updateTimeSelect() {
+      const dayName = getDayNameFromDate(selectedDate);
+      const times = dayName ? getAvailableTimes(dayName) : [];
+
+      els.timeSelect.innerHTML = '';
+
+      if (!selectedDate) {
+        els.timeSelect.disabled = true;
+        const opt = document.createElement('option');
+        opt.value = "";
+        opt.textContent = "اختر التاريخ أولاً";
+        els.timeSelect.appendChild(opt);
+        els.timeHint.textContent = "";
+        return;
+      }
+
+      els.timeSelect.disabled = false;
+
+      if (times.length === 0) {
+        const opt = document.createElement('option');
+        opt.value = "";
+        opt.textContent = "لا توجد أوقات متاحة";
+        els.timeSelect.appendChild(opt);
+        els.timeHint.textContent = "لا توجد أوقات متاحة لهذا اليوم";
+      } else {
+        const defaultOpt = document.createElement('option');
+        defaultOpt.value = "";
+        defaultOpt.textContent = "اختر الوقت";
+        els.timeSelect.appendChild(defaultOpt);
+
+        times.forEach(t => {
+          const opt = document.createElement('option');
+          opt.value = t;
+          opt.textContent = t;
+          els.timeSelect.appendChild(opt);
+        });
+
+        els.timeHint.textContent = "عدد الأوقات المتاحة: " + times.length;
+      }
+    }
+
+    function updateSummary() {
+      if (selectedDate) {
+        const dayName = getDayNameFromDate(selectedDate);
+        els.summaryDay.textContent = dayName || "";
+        els.summaryDayRow.classList.remove('hidden');
+      } else {
+        els.summaryDayRow.classList.add('hidden');
+      }
+
+      if (selectedTime) {
+        els.summaryTime.textContent = selectedTime;
+        els.summaryTimeRow.classList.remove('hidden');
+      } else {
+        els.summaryTimeRow.classList.add('hidden');
+      }
+    }
+
+    /* ===== RENDER ===== */
+    function renderDaysTabs() {
+      els.daysTabs.innerHTML = '';
+      Object.keys(SCHEDULE).forEach(day => {
+        const btn = document.createElement('button');
+        btn.className = 'day-tab' + (day === selectedDay ? ' active' : '');
+        btn.textContent = day;
+        btn.addEventListener('click', () => {
+          selectedDay = day;
+          renderDaysTabs();
+          renderSlots();
+        });
+        els.daysTabs.appendChild(btn);
+      });
+    }
+
+    function renderSlots() {
+      const schedule = SCHEDULE[selectedDay];
+      if (!schedule) return;
+
+      els.slotsGrid.innerHTML = schedule.map(slot => {
+        const isAvailable = slot.status === "متاح";
+        return `
+          <div class="slot-card ${isAvailable ? 'available' : 'busy'}">
+            <div class="slot-header">
+              <div class="slot-time">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                ${slot.time}
+              </div>
+              ${isAvailable
+                ? '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
+                : '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
+              }
+            </div>
+            <div class="slot-status ${isAvailable ? 'available' : 'busy'}">
+              ${isAvailable ? 'متاح للحجز' : 'محجوز'}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    /* ===== EVENTS ===== */
+    els.dateInput.addEventListener('change', function() {
+      selectedDate = this.value;
+      selectedTime = "";
+      els.timeSelect.value = "";
+      updateTimeSelect();
+      updateSummary();
+    });
+
+    els.timeSelect.addEventListener('change', function() {
+      selectedTime = this.value;
+      updateSummary();
+    });
+
+    els.form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // ── Validation ──
+      const address = document.getElementById('address-input').value.trim();
+      const description = document.getElementById('description-input').value.trim();
+      const urgency = document.getElementById('urgency-select').value;
+
+      let errors = [];
+
+      if (!selectedDate) {
+        errors.push('يجب اختيار التاريخ');
+      }
+      if (!selectedTime) {
+        errors.push('يجب اختيار الوقت المتاح');
+      }
+      if (!address) {
+        errors.push('يجب كتابة العنوان التفصيلي');
+      }
+      if (!description) {
+        errors.push('يجب كتابة وصف الخدمة المطلوبة');
+      }
+      if (!urgency || urgency === '') {
+        errors.push('يجب اختيار أولوية الخدمة');
+      }
+
+      if (errors.length > 0) {
+        alert('يرجى ملء جميع الحقول المطلوبة:\n\n' + errors.join('\n'));
+        return;
+      }
+
+      // All validations passed — proceed
+      const formData = {
+        date: selectedDate,
+        time: selectedTime,
+        address: address,
+        description: description,
+        urgency: urgency,
+        worker: WORKER,
+        serviceId: localStorage.getItem('san3a-bookingService') || 'cleaning'
+      };
+
+      localStorage.setItem('san3a-booking', JSON.stringify(formData));
+      window.location.href = 'payment.html';
+    });
+
+    const DEPOSITS = {
+      cleaning:    { EGP: 80,  SAR: 30, AED: 25 },
+      plumbing:    { EGP: 100, SAR: 40, AED: 35 },
+      electricity: { EGP: 120, SAR: 45, AED: 38 },
+      carpentry:   { EGP: 140, SAR: 55, AED: 45 },
+      appliances:  { EGP: 150, SAR: 60, AED: 50 },
+      painting:    { EGP: 120, SAR: 45, AED: 38 },
+      moving:      { EGP: 200, SAR: 75, AED: 60 }
+    };
+    const CURRENCY_SYMBOLS = { EGP: 'ج.م', SAR: 'ر.س', AED: 'د.إ' };
+
+    /* ===== INIT ===== */
+    function init() {
+      const today = new Date().toISOString().split('T')[0];
+      els.dateInput.min = today;
+
+      document.getElementById('summary-name').textContent = WORKER.name;
+      document.getElementById('summary-role').textContent = WORKER.profession;
+      document.getElementById('summary-rating').textContent = '⭐ ' + WORKER.rating + ' (' + WORKER.reviews + ' تقييم)';
+
+      // Set dynamic booking deposit
+      const svc = localStorage.getItem('san3a-bookingService') || 'cleaning';
+      const country = localStorage.getItem('san3a-country') || 'مصر';
+      const COUNTRY_TO_CUR = { 'مصر': 'EGP', 'السعودية': 'SAR', 'الإمارات': 'AED' };
+      const cur = COUNTRY_TO_CUR[country] || 'EGP';
+      const depositVal = DEPOSITS[svc] ? DEPOSITS[svc][cur] : DEPOSITS.cleaning[cur];
+      const currencySymbol = CURRENCY_SYMBOLS[cur] || 'ج.م';
+      
+      const depositEl = document.getElementById('summary-deposit-val');
+      if (depositEl) {
+        depositEl.textContent = depositVal + ' ' + currencySymbol;
+      }
+
+      renderDaysTabs();
+      renderSlots();
+      updateTimeSelect();
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
+</body>
+</html>

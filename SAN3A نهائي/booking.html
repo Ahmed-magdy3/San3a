@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أخبرنا عن مهمتك — SAN3A</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/booking.css" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { cairo: ['Cairo', 'sans-serif'] },
+          colors: {
+            'san3a-primary': '#1e40af',
+            'san3a-secondary': '#3b82f6',
+          }
+        },
+      },
+    };
+  </script>
+<base target="_blank">
+</head>
+
+<body class="font-cairo bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 min-h-screen">
+
+  <!-- ===== HEADER ===== -->
+  <header class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 sticky top-0 z-50 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- Right: Back -->
+      <a href="services.html" class="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold text-sm transition-colors">
+        العودة للخدمات
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <!-- Center: Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-md">
+          <span class="text-white font-bold text-lg">ص</span>
+        </div>
+        <span class="text-2xl font-bold text-gray-900 dark:text-white">SAN3A</span>
+      </a>
+
+      <!-- Left: Buttons -->
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all">
+          <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-600"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-yellow-400 hidden"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="profile.html" class="border border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 font-semibold px-4 py-2 rounded-lg text-sm transition-all">
+          الملف الشخصي
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO / STEPPER ===== -->
+  <section class="bg-blue-600 dark:bg-blue-700 pt-8 pb-10 text-white transition-colors duration-300">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <!-- Steps -->
+      <div class="flex items-center justify-center gap-3 mb-6 text-sm font-medium">
+        <div class="flex items-center gap-2">
+          <span class="w-8 h-8 rounded-full bg-white text-blue-600 flex items-center justify-center text-xs font-bold">1</span>
+          <span>تفاصيل المهمة</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-blue-200"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="flex items-center gap-2 opacity-60">
+          <span class="w-8 h-8 rounded-full border-2 border-white/40 text-white flex items-center justify-center text-xs font-bold">2</span>
+          <span>اختر العامل</span>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-3xl sm:text-4xl font-bold text-center mb-2">أخبرنا عن مهمتك</h1>
+      <p class="text-center text-blue-100 text-lg mb-8" id="service-name">خدمة: تنظيف المنازل</p>
+
+      <!-- Deposit Banner -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 sm:p-6 shadow-lg text-gray-800 dark:text-gray-100 transition-colors duration-300">
+        <div class="flex items-start gap-3">
+          <div class="shrink-0 mt-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          </div>
+          <div class="text-sm sm:text-base leading-relaxed">
+            <span class="font-bold text-blue-700 dark:text-blue-400" id="deposit-amount">جدية الحجز: 80 جنيه</span>
+            <span class="text-gray-600 dark:text-gray-300"> — يُدفع مرة واحدة عند التأكيد.</span>
+            <br/>
+            <span class="text-gray-600 dark:text-gray-300">العامل مضمون بـ </span>
+            <span class="font-bold text-blue-700 dark:text-blue-400" id="worker-guarantee">50 جنيه</span>
+            <span class="text-gray-600 dark:text-gray-300"> حتى لو لم تكن موجوداً. الموقع يحتفظ بـ </span>
+            <span class="font-bold text-blue-700 dark:text-blue-400" id="site-fee">30 جنيه</span>
+            <span class="text-gray-600 dark:text-gray-300">.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FORM ===== -->
+  <main class="max-w-3xl mx-auto px-6 py-8 space-y-6">
+
+    <!-- Vehicle Selection (for moving service only) -->
+    <div id="vehicle-section" class="hidden bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 sm:p-8 transition-colors duration-300">
+      <div class="flex items-center gap-2 mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white">هل تحتاج إلى مركبة للنقل؟</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <button type="button" id="vehicle-no" class="vehicle-option flex flex-col items-center gap-2 p-6 rounded-xl border-2 border-gray-200 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 transition-all bg-gray-50 dark:bg-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-blue-600"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <span class="font-semibold text-gray-900 dark:text-white">لا، لدي مركبة</span>
+        </button>
+        <button type="button" id="vehicle-yes" class="vehicle-option flex flex-col items-center gap-2 p-6 rounded-xl border-2 border-gray-200 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 transition-all bg-gray-50 dark:bg-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-blue-600"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span class="font-semibold text-gray-900 dark:text-white">نعم، أحتاج مركبة</span>
+        </button>
+      </div>
+
+      <!-- Vehicle Type (hidden by default) -->
+      <div id="vehicle-type-section" class="hidden">
+        <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          نوع المركبة المطلوبة
+        </label>
+        <div class="relative">
+          <select id="vehicle-type" class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-right text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all dark:text-white cursor-pointer">
+            <option value="" disabled selected>اختر نوع المركبة</option>
+            <option value="small">بيك أب صغير</option>
+            <option value="medium">بيك أب متوسط</option>
+            <option value="large">بيك أب كبير</option>
+            <option value="truck">شاحنة نقل</option>
+          </select>
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 sm:p-8 transition-colors duration-300">
+
+      <div class="flex items-center gap-2 mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white">عنوان موقع الخدمة</h2>
+      </div>
+      <p class="text-gray-500 dark:text-gray-400 text-sm mb-5 -mt-4 mr-7">أدخل العنوان كاملاً لتسهيل وصول العامل</p>
+
+      <!-- Full Address -->
+      <div class="mb-5">
+        <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          عنوان موقع الخدمة
+        </label>
+        <input 
+          type="text" 
+          id="fullAddress"
+          placeholder="أدخل العنوان كاملاً لتسهيل وصول العامل"
+          class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-right text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all dark:text-white dark:placeholder-gray-400"
+        />
+      </div>
+
+      <!-- Street Name -->
+      <div class="mb-5">
+        <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          اسم الشارع
+        </label>
+        <input 
+          type="text" 
+          id="street"
+          placeholder="مثال: شارع التحرير"
+          class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-right text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all dark:text-white dark:placeholder-gray-400"
+        />
+      </div>
+
+      <!-- Building & Unit -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+        <div>
+          <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            اسم العمارة / المبنى
+          </label>
+          <input 
+            type="text" 
+            id="building"
+            placeholder="مثال: عمارة النيل"
+            class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-right text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all dark:text-white dark:placeholder-gray-400"
+          />
+        </div>
+        <div>
+          <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            رقم الوحدة / الشقة
+          </label>
+          <input 
+            type="text" 
+            id="unit"
+            placeholder="مثال: شقة 12 — دور 3"
+            class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-right text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all dark:text-white dark:placeholder-gray-400"
+          />
+        </div>
+      </div>
+
+      <!-- City -->
+      <div>
+        <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          المدينة
+        </label>
+        <div class="relative">
+          <select 
+            id="city"
+            class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-right text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all dark:text-white cursor-pointer"
+          >
+            <option value="" disabled selected>اختر المدينة</option>
+            <option value="cairo">القاهرة</option>
+            <option value="alex">الإسكندرية</option>
+            <option value="giza">الجيزة</option>
+            <option value="mansoura">المنصورة</option>
+            <option value="tanta">طنطا</option>
+            <option value="port-said">بورسعيد</option>
+            <option value="luxor">الأقصر</option>
+          </select>
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Description Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 sm:p-8 transition-colors duration-300">
+      <div class="flex items-center gap-2 mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white">وصف الخدمة المطلوبة</h2>
+      </div>
+      <p class="text-gray-500 dark:text-gray-400 text-sm mb-5 mr-7">كلما كان الوصف أدق، كان العامل أكثر استعداداً</p>
+
+      <textarea 
+        id="description"
+        rows="4"
+        placeholder="مثال: تنظيف شقة 3 غرف، تنظيف الحمامات، غسيل الشبابيك..."
+        class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-right text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none dark:text-white dark:placeholder-gray-400"
+      ></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button 
+      id="submitBtn"
+      onclick="handleSubmit()"
+      class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg flex items-center justify-center gap-2"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      عرض العمال المتاحين
+    </button>
+
+  </main>
+
+  <script src="js/global.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

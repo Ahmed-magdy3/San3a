@@ -1,0 +1,87 @@
+/* worker-public.css */
+
+/* Day tab active state */
+.day-tab {
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.day-tab:hover:not(.active) {
+  background-color: #f3f4f6;
+}
+.dark .day-tab:hover:not(.active) {
+  background-color: #374151;
+}
+.day-tab.active {
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Time slot cards */
+.slot-card {
+  transition: all 0.2s ease;
+}
+.slot-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Review card */
+.review-card {
+  transition: all 0.2s ease;
+}
+.review-card:hover {
+  background-color: #f9fafb;
+}
+.dark .review-card:hover {
+  background-color: #1f2937;
+}
+
+/* Specialty badge */
+.specialty-badge {
+  transition: all 0.2s ease;
+}
+.specialty-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+
+/* Star rating */
+.star-filled {
+  color: #facc15;
+  fill: #facc15;
+}
+.star-empty {
+  color: #d1d5db;
+  fill: none;
+}
+.dark .star-empty {
+  color: #4b5563;
+}
+
+/* Scrollbar for days tabs */
+#days-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+#days-tabs::-webkit-scrollbar-track {
+  background: transparent;
+}
+#days-tabs::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+.dark #days-tabs::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}

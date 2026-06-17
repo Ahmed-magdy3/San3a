@@ -1,0 +1,124 @@
+/* worker-profile.css */
+
+/* Modal animations */
+#edit-modal, #notifications-modal {
+  transition: opacity 0.3s ease;
+}
+#edit-modal.hidden, #notifications-modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+#edit-modal:not(.hidden), #notifications-modal:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#edit-modal > div:last-child > div,
+#notifications-modal > div:last-child > div {
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+#edit-modal:not(.hidden) > div:last-child > div,
+#notifications-modal:not(.hidden) > div:last-child > div {
+  transform: scale(1);
+}
+
+/* Booking card hover */
+.booking-card {
+  transition: all 0.2s ease;
+}
+.booking-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.dark .booking-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Review card hover */
+.review-card {
+  transition: all 0.2s ease;
+}
+.review-card:hover {
+  background-color: #f9fafb;
+}
+.dark .review-card:hover {
+  background-color: #1f2937;
+}
+
+/* Star rating */
+.star-filled {
+  color: #facc15;
+  fill: #facc15;
+}
+.star-empty {
+  color: #d1d5db;
+  fill: none;
+}
+.dark .star-empty {
+  color: #4b5563;
+}
+
+/* Earnings bar animation */
+.earnings-bar {
+  transition: width 0.8s ease-out;
+}
+
+/* Settings dropdown */
+#settings-dropdown {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+#settings-dropdown.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+#settings-dropdown:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scrollbar for reviews */
+#reviews-list::-webkit-scrollbar {
+  width: 6px;
+}
+#reviews-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+#reviews-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.dark #reviews-list::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+/* Status badges */
+.status-accepted {
+  @apply bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800;
+}
+.status-pending {
+  @apply bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800;
+}
+.status-completed {
+  @apply bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800;
+}
+.status-cancelled {
+  @apply bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800;
+}
+
+/* Notification item */
+.notif-item {
+  transition: all 0.2s ease;
+}
+.notif-item:hover {
+  background-color: #f3f4f6;
+}
+.dark .notif-item:hover {
+  background-color: #374151;
+}
+
+/* Input focus */
+input:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
