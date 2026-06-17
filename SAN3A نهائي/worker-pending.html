@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>انتظار التحقق — SAN3A</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/worker-pending.css">
+</head>
+<body>
+
+  <!-- ===== الهيدر ===== -->
+  <header class="wp-header">
+    <div class="wp-header-inner">
+      <a href="login.html" class="wp-logout-btn" id="logout-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        تسجيل الخروج
+      </a>
+      <div class="wp-logo">
+        <div class="wp-logo-icon">ص</div>
+        <span class="wp-logo-text">SAN3A</span>
+      </div>
+      <div class="wp-header-spacer"></div>
+    </div>
+  </header>
+
+  <!-- ===== المحتوى الرئيسي ===== -->
+  <main class="wp-main">
+    <div class="wp-card">
+
+      <!-- الأيقونة المتحركة -->
+      <div class="wp-icon-wrap">
+        <div class="wp-icon-circle">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div class="wp-icon-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        </div>
+      </div>
+
+      <!-- العنوان -->
+      <h2 class="wp-title">حسابك قيد المراجعة</h2>
+
+      <!-- الرسالة -->
+      <p class="wp-subtitle">شكراً لتسجيلك كعامل في منصة SAN3A</p>
+
+      <!-- صندوق المعلومات -->
+      <div class="wp-info-box">
+        <p class="wp-info-text">تم استلام طلبك بنجاح! يقوم فريقنا حالياً بمراجعة معلوماتك والتحقق من بياناتك.</p>
+        <p class="wp-info-text">سيتم إشعارك عبر البريد الإلكتروني فور الموافقة على حسابك، وستتمكن بعدها من الوصول الكامل إلى لوحة التحكم واستقبال الطلبات.</p>
+      </div>
+
+      <!-- خطوات الحالة -->
+      <div class="wp-steps">
+
+        <!-- خطوة 1: تم بنجاح -->
+        <div class="wp-step wp-step-done">
+          <div class="wp-step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <div class="wp-step-content">
+            <h3 class="wp-step-title">تم إنشاء الحساب بنجاح</h3>
+            <p class="wp-step-desc">تم استلام معلوماتك وحفظها في النظام</p>
+          </div>
+        </div>
+
+        <!-- خطوة 2: قيد المراجعة -->
+        <div class="wp-step wp-step-pending">
+          <div class="wp-step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="wp-step-content">
+            <h3 class="wp-step-title">قيد المراجعة من قبل الإدارة</h3>
+            <p class="wp-step-desc">يتم حالياً التحقق من صحة البيانات المقدمة</p>
+          </div>
+        </div>
+
+        <!-- خطوة 3: الموافقة -->
+        <div class="wp-step wp-step-waiting">
+          <div class="wp-step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <div class="wp-step-content">
+            <h3 class="wp-step-title">الموافقة على الحساب</h3>
+            <p class="wp-step-desc">سيتم إشعارك فور اكتمال المراجعة</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- الوقت المتوقع -->
+      <div class="wp-time-box">
+        <h3 class="wp-time-title">الوقت المتوقع للمراجعة</h3>
+        <p class="wp-time-value">24 - 48 ساعة</p>
+      </div>
+
+      <!-- قسم المساعدة -->
+      <div class="wp-help">
+        <p class="wp-help-text">في حالة وجود أي استفسار، يمكنك التواصل معنا</p>
+        <div class="wp-help-btns">
+          <button class="wp-btn wp-btn-support" id="support-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            تواصل مع الدعم الفني
+          </button>
+          <a href="login.html" class="wp-btn wp-btn-login">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+            العودة لتسجيل الدخول
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ملاحظة أسفل البطاقة -->
+    <p class="wp-footer-note">شكراً لثقتك في منصة SAN3A</p>
+  </main>
+
+  <script src="js/worker-pending.js"></script>
+</body>
+</html>

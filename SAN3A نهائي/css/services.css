@@ -1,0 +1,118 @@
+/* SAN3A — Services Page Specific Styles */
+
+/* Service Card Hover Effect */
+.service-card {
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Box */
+.icon-box {
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .icon-box {
+  transform: scale(1.05);
+}
+
+/* Book Button */
+.book-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.book-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.book-btn:hover::after {
+  opacity: 1;
+}
+
+.book-btn:hover {
+  background-color: #1d4ed8 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.book-btn:active {
+  transform: scale(0.98);
+}
+
+/* Price Pill */
+.price-pill {
+  transition: all 0.2s ease;
+}
+
+.service-card:hover .price-pill {
+  background-color: #dbeafe;
+}
+
+.dark .service-card:hover .price-pill {
+  background-color: rgba(30, 64, 175, 0.4);
+}
+
+/* Why Item */
+.why-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.why-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Emergency Button */
+#emergency-btn {
+  transition: all 0.2s ease;
+}
+
+#emergency-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.4);
+}
+
+/* Staggered Animation for Cards */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.service-card:nth-child(1) { animation: fadeInUp 0.5s ease 0.1s both; }
+.service-card:nth-child(2) { animation: fadeInUp 0.5s ease 0.2s both; }
+.service-card:nth-child(3) { animation: fadeInUp 0.5s ease 0.3s both; }
+.service-card:nth-child(4) { animation: fadeInUp 0.5s ease 0.4s both; }
+.service-card:nth-child(5) { animation: fadeInUp 0.5s ease 0.5s both; }
+.service-card:nth-child(6) { animation: fadeInUp 0.5s ease 0.6s both; }
+.service-card:nth-child(7) { animation: fadeInUp 0.5s ease 0.7s both; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .icon-box {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .icon-box svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

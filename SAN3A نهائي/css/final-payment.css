@@ -1,0 +1,51 @@
+/* final-payment.css */
+
+/* Payment option selected state enhancement */
+.payment-option:has(input:checked) {
+  border-color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.dark .payment-option:has(input:checked) {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Card number input styling */
+#card-number {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Smooth transitions for form sections */
+#card-form, #paypal-info, #wallet-info {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hero pattern animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Button hover lift */
+#pay-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Custom scrollbar for RTL */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

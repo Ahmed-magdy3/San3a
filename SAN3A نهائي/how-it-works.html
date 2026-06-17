@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كيف يعمل - صنعة SAN3A</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/how-it-works.css">
+</head>
+<body>
+
+  <!-- ===== الهيدر ===== -->
+  <header class="hiw-header">
+    <div class="hiw-header-inner">
+      <div class="hiw-header-left">
+        <a href="index.html" class="hiw-close-btn" aria-label="العودة">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </a>
+        <div class="hiw-logo">
+          <div class="hiw-logo-icon">ص</div>
+          <span class="hiw-logo-text">  <span class="hiw-logo-en">SAN3A</span></span>
+        </div>
+      </div>
+      <div class="hiw-header-right">
+        <button id="theme-toggle" class="hiw-theme-btn" aria-label="تبديل الوضع">
+          <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="services.html" class="hiw-start-btn">ابدأ الآن</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== الهيرو ===== -->
+  <section class="hiw-hero">
+    <h2 class="hiw-hero-title">كيف تستخدم منصة SAN3A</h2>
+    <p class="hiw-hero-desc">دليل شامل خطوة بخطوة لاستخدام المنصة بكفاءة، سواء كنت عميلاً يبحث عن خدمة، عاملاً يقدم خدماته، أو مسؤولاً يدير المنصة</p>
+  </section>
+
+  <!-- ===== تبويبات الأدوار ===== -->
+  <section class="hiw-tabs-wrap">
+    <div class="hiw-tabs">
+      <button class="hiw-tab active" data-role="user">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        للعملاء
+      </button>
+      <button class="hiw-tab" data-role="worker">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        للعمال
+      </button>
+      <button class="hiw-tab" data-role="admin">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        للمسؤولين
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== محتوى الخطوات ===== -->
+  <section class="hiw-content">
+    <div class="hiw-content-grid">
+
+      <!-- الشريط الجانبي -->
+      <aside class="hiw-sidebar">
+        <div class="hiw-sidebar-head">
+          <h3 class="hiw-sidebar-title" id="sidebar-title">خطوات العميل</h3>
+        </div>
+        <div class="hiw-steps-list" id="steps-list"></div>
+      </aside>
+
+      <!-- تفاصيل الخطوة -->
+      <main class="hiw-detail">
+        <div class="hiw-detail-card" id="detail-card">
+          <div class="hiw-detail-head">
+            <div class="hiw-detail-icon" id="step-icon"></div>
+            <div class="hiw-detail-meta">
+              <div class="hiw-detail-numrow">
+                <span class="hiw-detail-label">الخطوة <span id="step-num">1</span></span>
+                <span class="hiw-detail-total">من <span id="step-total">9</span></span>
+              </div>
+              <h3 class="hiw-detail-title" id="step-title"></h3>
+              <p class="hiw-detail-desc" id="step-desc"></p>
+            </div>
+          </div>
+
+          <div class="hiw-details-box">
+            <h4 class="hiw-details-heading">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              التفاصيل والملاحظات المهمة
+            </h4>
+            <ul class="hiw-details-list" id="details-list"></ul>
+          </div>
+
+          <div class="hiw-nav">
+            <button class="hiw-nav-btn hiw-nav-prev" id="prev-btn" disabled>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              السابق
+            </button>
+            <div class="hiw-dots" id="dots-wrap"></div>
+            <button class="hiw-nav-btn hiw-nav-next" id="next-btn">
+              التالي
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <!-- ===== المميزات ===== -->
+  <section class="hiw-features">
+    <h3 class="hiw-section-heading">مميزات منصة SAN3A</h3>
+    <div class="hiw-features-grid">
+      <div class="hiw-feat-card">
+        <div class="hiw-feat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h4 class="hiw-feat-title">آمن ومضمون</h4>
+        <p class="hiw-feat-desc">جميع المعاملات مشفرة ومحمية بأعلى معايير الأمان</p>
+      </div>
+      <div class="hiw-feat-card">
+        <div class="hiw-feat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <h4 class="hiw-feat-title">متوفر 24/7</h4>
+        <p class="hiw-feat-desc">خدمة عملاء متاحة على مدار الساعة لمساعدتك</p>
+      </div>
+      <div class="hiw-feat-card">
+        <div class="hiw-feat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <h4 class="hiw-feat-title">تقييمات موثوقة</h4>
+        <p class="hiw-feat-desc">نظام تقييم شامل من 8 أسئلة لضمان الجودة</p>
+      </div>
+      <div class="hiw-feat-card">
+        <div class="hiw-feat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+        </div>
+        <h4 class="hiw-feat-title">دفع مرن</h4>
+        <p class="hiw-feat-desc">جدية حجز مقدماً والباقي على حسب الساعات الفعلية</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== الدول ===== -->
+  <section class="hiw-countries">
+    <h3 class="hiw-countries-heading">الدول المتاحة</h3>
+    <div class="hiw-countries-grid">
+      <div class="hiw-country">
+        <div class="hiw-country-code">EG</div>
+        <h4 class="hiw-country-name">مصر</h4>
+        <p class="hiw-country-currency">العملة: EGP</p>
+      </div>
+      <div class="hiw-country">
+        <div class="hiw-country-code">SA</div>
+        <h4 class="hiw-country-name">السعودية</h4>
+        <p class="hiw-country-currency">العملة: SAR</p>
+      </div>
+      <div class="hiw-country">
+        <div class="hiw-country-code">AE</div>
+        <h4 class="hiw-country-name">الإمارات</h4>
+        <p class="hiw-country-currency">العملة: AED</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== بطاقات المعلومات ===== -->
+  <section class="hiw-info">
+    <div class="hiw-info-grid">
+      <div class="hiw-info-card hiw-info-green">
+        <div class="hiw-info-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <h3 class="hiw-info-title">نظام التقييم الشامل</h3>
+        <ul class="hiw-info-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> 8 أسئلة تفصيلية لكل خدمة</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> التقييم يظهر بعد دفع المبلغ الكامل</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> تقييم الجودة والاحترافية والنظافة</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> يساعد في تحسين جودة الخدمات</li>
+        </ul>
+      </div>
+      <div class="hiw-info-card hiw-info-blue">
+        <div class="hiw-info-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+        </div>
+        <h3 class="hiw-info-title">نظام الدفع بجدية الحجز</h3>
+        <ul class="hiw-info-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> ادفع جدية الحجز لضمان الموعد</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> تشمل رسوم المنصة + ضمان للعامل</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> الدفع النهائي تحسب حسب الساعات الفعلية</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> دفع آمن ومشفر 100%</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> إمكانية الإلغاء قبل 24 ساعة</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="hiw-cta">
+    <div class="hiw-cta-inner">
+      <h3 class="hiw-cta-title">جاهز للبدء؟</h3>
+      <p class="hiw-cta-desc">انضم إلى آلاف المستخدمين الذين يثقون في SAN3A للخدمات المنزلية</p>
+      <div class="hiw-cta-btns">
+        <a href="login.html" class="hiw-cta-btn hiw-cta-outline">سجل كعامل</a>
+        <a href="services.html" class="hiw-cta-btn hiw-cta-primary">ابدأ كعميل</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== الفوتر ===== -->
+  <footer class="hiw-footer">
+    <div class="hiw-footer-inner">
+      <div class="hiw-footer-logo">
+        <div class="hiw-footer-icon">ص</div>
+        <span class="hiw-footer-brand">SAN3A</span>
+      </div>
+      <p class="hiw-footer-desc">منصة خدمات منزلية احترافية في الشرق الأوسط</p>
+      <div class="hiw-footer-links">
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">شروط الاستخدام</a>
+        <a href="#">اتصل بنا</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/how-it-works.js"></script>
+</body>
+</html>

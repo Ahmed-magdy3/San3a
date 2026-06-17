@@ -1,0 +1,36 @@
+/* SAN3A — Landing Page Specific Styles */
+
+/* Stats reveal animation */
+.stat-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.stat-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance animations */
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.hero-text { animation: fadeInRight 0.7s ease both; }
+.hero-image { animation: fadeInLeft 0.7s ease 0.15s both; }
+
+/* Service cards staggered entrance */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.service-card:nth-child(1) { animation: fadeInUp 0.5s ease 0.1s both; }
+.service-card:nth-child(2) { animation: fadeInUp 0.5s ease 0.2s both; }
+.service-card:nth-child(3) { animation: fadeInUp 0.5s ease 0.3s both; }
+.service-card:nth-child(4) { animation: fadeInUp 0.5s ease 0.4s both; }

@@ -1,0 +1,82 @@
+/* login.css */
+
+/* Tab transitions */
+.tab-btn {
+  transition: all 0.3s ease;
+}
+
+/* User type button active state */
+.user-type-btn-login,
+.user-type-btn-signup {
+  transition: all 0.2s ease;
+}
+
+/* Country button */
+.country-btn {
+  transition: all 0.2s ease;
+}
+.country-btn:hover:not(.active) {
+  transform: translateY(-1px);
+}
+
+/* Form input focus */
+input:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Modal animation */
+#rating-modal {
+  transition: opacity 0.3s ease;
+}
+#rating-modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+#rating-modal:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal content animation */
+#rating-modal > div:last-child > div {
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+#rating-modal:not(.hidden) > div:last-child > div {
+  transform: scale(1);
+}
+
+/* Question card */
+.question-card {
+  transition: all 0.2s ease;
+}
+.question-card:hover {
+  background-color: #f9fafb;
+}
+.dark .question-card:hover {
+  background-color: #1f2937;
+}
+
+/* Social button hover */
+.social-btn {
+  transition: all 0.2s ease;
+}
+.social-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar for modal */
+#rating-questions-list::-webkit-scrollbar {
+  width: 6px;
+}
+#rating-questions-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+#rating-questions-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.dark #rating-questions-list::-webkit-scrollbar-thumb {
+  background: #475569;
+}
